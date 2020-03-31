@@ -127,13 +127,19 @@
     });
     api.onPageChange(() => {
         if (Discourse.User.current() !== null){ 
-            document.getElementById("sidebar").style.display = "block";
+            var sb = document.getElementById("sidebar")
+            if (sb) { 
+                sb.style.display = "block"; 
+            }
         } 
     });
     api.onPageChange(() => { 
         var is_iPad = navigator.userAgent.match(/iPad/i) != null;
         if(is_iPad)  {
-            document.getElementById("sidebar").style.display = "none";
+            var sb = document.getElementById("sidebar")
+            if (sb) { 
+                sb.style.display = "none"; 
+            }
         }
     });
 </script>
